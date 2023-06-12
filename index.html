@@ -19,6 +19,7 @@
         <script type="text/javascript" src="js/array_test.js" defer></script>
         <script type="text/javascript" src="js/array_test2.js" defer></script>
         <script type="text/javascript" src="js/join.js" defer></script>
+        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=79a3e6e4e3911d7ecd787afad808a644" autoload=false> </script>
        
         <hr> <! hr은 밑줄을 그려줍니다.>
     </head>
@@ -72,7 +73,7 @@
         </li> 
             <li class="nav-item">
 	<button class="btn btn-outline-success" type="submit" onclick="location.href='login.html'">로그인하기</button>
-    <input class="btn btn-primary btn-lg" onclick="join()" type="button" id="join_btn" value="회원 가입!" />
+    <button class="btn btn-outline-success" type="submit" onclick="location.href='join.html'">회원가입</button>
 
 
 
@@ -82,6 +83,22 @@
     </div>
   </div>
 </nav>
+         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="#">LOGO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="profile/profile.html" target='_blank'>소개 페이지</a>
+                </li>
+                
+                </ul>
+            </div>
+            </div>
+        </nav>
 
         <p style="text-align:left">
             <font size="2em" color="green">문서제목, 자바스크립트 코드, CSS 스타일 정의, 메타데이터정의</font>
