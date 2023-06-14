@@ -7,6 +7,7 @@ function login(){
     form.action = "../index_login.html";
     form.method = "get"
     
+   /*
    if(check.checked ==true){ //아이디 체크 o
       alert("쿠키를 저장합니다.");
       setCookie("id", id.value, 1); //1을 저장
@@ -15,13 +16,13 @@ function login(){
    else { //아이디 체크 x
       setCookie("id", id.value, 0); //날짜를 0 - 쿠키 삭제
    }
+   */
    
     if(id.value.length === 0 || password.value.length === 0){
         alert("아이디와 비밀번호를 모두 입력해주세요.")
     }else{
-      session_set();
-        //login_check();
-      form.submit();
+      //session_set();
+        login_check();
     }
    
 }
@@ -73,8 +74,23 @@ function get_id(){
    alert(getParameters('id') + '님 방갑습니다!'); // 메시지 창 출력
 }
 
-/*
+
 function login_check() {
+   /*let form = document.querySelector("#form_main");
+   var getParameters = function(paramName){ // 변수 = 함수(이름)
+   var returnValue; // 리턴값을 위한 변수 선언
+   var url = location.href; // 현재 접속 중인 주소 정보 저장
+   var parameters = (url.slice(url.indexOf('?') + 1, url.length)).split('&'); // ?기준 slice 한 후 split 으로 나눔
+      for(var i = 0; i < parameters.length; i++) { 
+         var varName = parameters[i].split('=')[0];
+
+         if (varName.toUpperCase() == paramName.toUpperCase()) {
+            returnValue = parameters[i].split('=')[1];
+            return decodeURIComponent(returnValue);
+         // 나누어진 값의 비교를 통해 paramName 으로 요청된 데이터의 값만 return
+         }
+      } // 2중 for문 끝
+   };*/
    let id = document.querySelector("#floatingInput");
    let pass = document.querySelector("#floatingPassword");
    let form = document.querySelector("#form_main");
@@ -82,11 +98,12 @@ function login_check() {
    form.action = "../index_login.html";
     form.method = "get"
    
-   var regExp1 = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
-   var regExp2 = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{10,}$/;
+   var regExp1 = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{10,}$/;
+   var regExp2 = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
 
    var id_result = regExp1.test(id);
    var pass_result = regExp2.test(pass);
+   
    
    
    if (id !== id_result || pass !== pass_result){
@@ -94,7 +111,7 @@ function login_check() {
    }
    
    else{
-      if(check.checked == true){ //아이디 체크 o
+      if(check.checked ==true){ //아이디 체크 o
          alert("쿠키를 저장합니다.");
          setCookie("id", id.value, 1); //1을 저장
          alert("쿠키 값: " + id.value);
@@ -106,7 +123,7 @@ function login_check() {
       form.submit();
    }
 }
-*/
+
 
 
 //내가 만든 쿠키~~

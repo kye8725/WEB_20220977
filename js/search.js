@@ -16,3 +16,20 @@ function search_message(){
     }
 }
 
+var search_array = [];
+const filltering = ["시발","미친","개새끼"];
+
+function search_message(){
+   let search_str = document.getElementById("search_txt").value;
+   if(filltering.includes(search_str)){
+      alert("검색 제한");
+       return false;
+   }
+   else{
+      alert("검색 수행");
+      document.querySelector("#form_main").submit();
+      search_array.push(search_str.value);      
+   }
+   let text = document.getElementById("search_message").innerHtml = search_array.toString();
+   search_message.innerHTML = search_str.value;
+}
